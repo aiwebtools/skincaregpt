@@ -1,5 +1,5 @@
 
-import { Eye, Heart, Search, Shield, Spa } from "lucide-react";
+import { Bath, Eye, Heart, Search, Shield } from "lucide-react";
 
 const FeatureCard = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => {
   return (
@@ -26,7 +26,7 @@ const FeaturesSection = () => {
       description: "Receive personalized product recommendations based on your specific skin needs and concerns."
     },
     {
-      icon: Spa,
+      icon: Bath,
       title: "Spa Services",
       description: "Get recommendations for spa services and treatments that address your unique skincare needs."
     },
