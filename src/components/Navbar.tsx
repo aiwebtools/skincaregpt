@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import CyberButton from "./CyberButton";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Bath } from "lucide-react";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -19,9 +19,9 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2">
               <div className="relative h-10 w-10">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyber-purple to-cyber-blue opacity-70 blur-sm"></div>
-                <div className="relative h-full w-full rounded-full border border-cyber-purple/50 bg-black/30 flex items-center justify-center">
-                  <span className="text-xl font-bold text-white">S</span>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-teal-400 to-purple-400 opacity-70 blur-sm"></div>
+                <div className="relative h-full w-full rounded-full border border-teal-300/50 bg-black/30 flex items-center justify-center">
+                  <Bath size={18} className="text-white" />
                 </div>
               </div>
               <div className="flex flex-col">
