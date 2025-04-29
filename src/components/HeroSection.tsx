@@ -37,6 +37,10 @@ const HeroSection = () => {
     };
   }, []);
 
+  const handleSkinAnalysisClick = () => {
+    window.open("https://chatgpt.com/g/g-KyRzUxJzX-skincare-gpt", "_blank");
+  };
+
   return (
     <section className="relative min-h-screen py-20 flex items-center overflow-hidden">
       {/* Background graphics */}
@@ -76,7 +80,10 @@ const HeroSection = () => {
           
           <div className="lg:w-1/2 mt-10 lg:mt-0">
             <div ref={containerRef} className="transition-transform duration-300 ease-out">
-              <div className="relative rounded-xl overflow-hidden neon-border">
+              <div 
+                className="relative rounded-xl overflow-hidden neon-border cursor-pointer" 
+                onClick={handleSkinAnalysisClick}
+              >
                 {/* Decorative elements for cyber aesthetic */}
                 <div className="absolute top-4 left-4 z-20 flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-cyber-pink"></div>
@@ -94,7 +101,7 @@ const HeroSection = () => {
                 </div>
                 
                 {/* Placeholder image/screen */}
-                <div className="aspect-[4/3] bg-black relative overflow-hidden">
+                <div className="aspect-[4/3] bg-black relative overflow-hidden group hover:bg-cyber-purple/5 transition-colors">
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
                     <div className="w-24 h-24 rounded-full border-2 border-cyber-purple flex items-center justify-center mb-4 relative animate-pulse-glow">
                       <Camera size={36} className="text-cyber-purple" />
@@ -105,6 +112,9 @@ const HeroSection = () => {
                       Upload an image of your skin to receive a detailed analysis of your skin type, 
                       concerns, and personalized product recommendations
                     </p>
+                    <span className="mt-4 text-cyber-pink opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Click to launch SKINCARE GPT →
+                    </span>
                   </div>
                   
                   {/* Terminal-like text at bottom */}
