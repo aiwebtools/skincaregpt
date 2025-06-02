@@ -54,6 +54,21 @@
   body {
     @apply bg-cyber-dark text-foreground antialiased overflow-x-hidden;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+    background: linear-gradient(-45deg, #1A1F2C, #2D1B69, #4C1D95, #1E1B4B, #0F0C29);
+    background-size: 400% 400%;
+    animation: divineGradient 15s ease infinite;
+  }
+
+  @keyframes divineGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 }
 
@@ -64,33 +79,185 @@
   
   .neon-border {
     @apply border border-cyber-purple relative;
-    box-shadow: 0 0 5px theme('colors.cyber.purple'), 
-                inset 0 0 5px theme('colors.cyber.purple');
+    box-shadow: 0 0 20px theme('colors.cyber.purple'), 
+                inset 0 0 20px theme('colors.cyber.purple'),
+                0 0 40px rgba(155, 135, 245, 0.5),
+                0 0 60px rgba(155, 135, 245, 0.3);
+    animation: borderPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes borderPulse {
+    0%, 100% { 
+      box-shadow: 0 0 20px theme('colors.cyber.purple'), 
+                  inset 0 0 20px theme('colors.cyber.purple'),
+                  0 0 40px rgba(155, 135, 245, 0.5),
+                  0 0 60px rgba(155, 135, 245, 0.3);
+    }
+    50% { 
+      box-shadow: 0 0 40px theme('colors.cyber.purple'), 
+                  inset 0 0 40px theme('colors.cyber.purple'),
+                  0 0 80px rgba(155, 135, 245, 0.8),
+                  0 0 120px rgba(155, 135, 245, 0.6);
+    }
   }
 
   .glass-panel {
-    @apply backdrop-blur-lg bg-white/5 border border-white/10 rounded-xl;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    @apply backdrop-blur-xl bg-gradient-to-br from-white/10 via-purple-500/5 to-pink-500/10 border border-white/20 rounded-xl relative overflow-hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+                0 0 60px rgba(155, 135, 245, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
   }
   
   .text-glow {
-    text-shadow: 0 0 10px currentColor;
+    text-shadow: 0 0 20px currentColor,
+                 0 0 40px currentColor,
+                 0 0 60px currentColor;
   }
   
   .neon-text {
     text-shadow: 0 0 5px currentColor, 
                  0 0 10px currentColor, 
-                 0 0 15px currentColor;
+                 0 0 15px currentColor,
+                 0 0 20px currentColor,
+                 0 0 35px currentColor,
+                 0 0 40px currentColor;
+    animation: textGlow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes textGlow {
+    from {
+      text-shadow: 0 0 5px currentColor, 
+                   0 0 10px currentColor, 
+                   0 0 15px currentColor,
+                   0 0 20px currentColor,
+                   0 0 35px currentColor,
+                   0 0 40px currentColor;
+    }
+    to {
+      text-shadow: 0 0 10px currentColor, 
+                   0 0 20px currentColor, 
+                   0 0 30px currentColor,
+                   0 0 40px currentColor,
+                   0 0 70px currentColor,
+                   0 0 80px currentColor;
+    }
   }
   
   .text-gradient {
-    @apply bg-gradient-to-br from-cyber-purple via-cyber-pink to-cyber-blue bg-clip-text text-transparent;
+    @apply bg-gradient-to-br from-purple-300 via-pink-300 to-cyan-300 bg-clip-text text-transparent;
+    animation: gradientShift 4s ease-in-out infinite;
+  }
+
+  @keyframes gradientShift {
+    0%, 100% {
+      filter: hue-rotate(0deg) brightness(1);
+    }
+    50% {
+      filter: hue-rotate(60deg) brightness(1.2);
+    }
   }
   
   .cyber-grid-bg {
     background-image: 
-      linear-gradient(rgba(155, 135, 245, 0.15) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(155, 135, 245, 0.15) 1px, transparent 1px);
-    background-size: 20px 20px;
+      linear-gradient(rgba(155, 135, 245, 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(155, 135, 245, 0.3) 1px, transparent 1px),
+      radial-gradient(circle, rgba(255, 119, 198, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px, 30px 30px, 60px 60px;
+    animation: gridFloat 8s ease-in-out infinite;
+  }
+
+  @keyframes gridFloat {
+    0%, 100% {
+      background-position: 0 0, 0 0, 0 0;
+    }
+    50% {
+      background-position: 15px 15px, 15px 15px, 30px 30px;
+    }
+  }
+
+  .divine-orb {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(155, 135, 245, 0.8) 0%, rgba(255, 119, 198, 0.6) 50%, transparent 70%);
+    animation: divineFloat 6s ease-in-out infinite;
+    filter: blur(1px);
+  }
+
+  @keyframes divineFloat {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translate(20px, -20px) scale(1.1);
+      opacity: 0.9;
+    }
+  }
+
+  .divine-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.8), transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(155, 135, 245, 0.8), transparent),
+      radial-gradient(1px 1px at 90px 40px, rgba(255, 119, 198, 0.8), transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(120, 219, 255, 0.8), transparent),
+      radial-gradient(2px 2px at 160px 30px, rgba(255, 255, 255, 0.6), transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: particleFloat 20s linear infinite;
+  }
+
+  @keyframes particleFloat {
+    0% {
+      background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+    }
+    100% {
+      background-position: 200px 100px, -200px 50px, 100px -100px, -100px 200px, 300px -50px;
+    }
+  }
+
+  .ethereal-glow {
+    position: relative;
+  }
+
+  .ethereal-glow::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(155, 135, 245, 0.3), transparent, rgba(255, 119, 198, 0.3), transparent);
+    animation: rotate 8s linear infinite;
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(20px);
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }

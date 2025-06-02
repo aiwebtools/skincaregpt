@@ -34,18 +34,39 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-cyber-dark overflow-hidden relative">
-      {/* Background effects */}
-      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-cyber-dark via-black to-cyber-dark z-0"></div>
+      {/* Divine background effects */}
+      <div className="fixed inset-0 bg-gradient-to-br from-purple-900/30 via-black to-indigo-900/30 z-0"></div>
+      
+      {/* Floating divine orbs */}
+      <div className="divine-orb w-64 h-64 top-10 left-10 z-0"></div>
+      <div className="divine-orb w-96 h-96 top-1/3 right-20 z-0" style={{animationDelay: '2s'}}></div>
+      <div className="divine-orb w-48 h-48 bottom-20 left-1/4 z-0" style={{animationDelay: '4s'}}></div>
+      <div className="divine-orb w-80 h-80 bottom-10 right-10 z-0" style={{animationDelay: '6s'}}></div>
+      
+      {/* Divine particles */}
+      <div className="divine-particles fixed inset-0 z-0 opacity-60"></div>
       
       <div className="relative z-10">
         <Navbar />
-        <main className="pt-16">
-          <HeroSection />
-          <FeaturesSection />
-          <HowItWorksSection />
+        <main className="pt-16 relative">
+          <div className="ethereal-glow">
+            <HeroSection />
+          </div>
+          <div className="relative">
+            <FeaturesSection />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-500/5 to-transparent"></div>
+          </div>
+          <div className="ethereal-glow">
+            <HowItWorksSection />
+          </div>
           <TestimonialsSection />
-          <FAQSection />
-          <DisclaimerSection />
+          <div className="relative">
+            <FAQSection />
+            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-pink-500/5 to-transparent"></div>
+          </div>
+          <div className="ethereal-glow">
+            <DisclaimerSection />
+          </div>
           <CallToAction />
         </main>
         <Footer />

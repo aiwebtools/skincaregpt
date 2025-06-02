@@ -63,9 +63,9 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Cyberpunk theme colors
+				// Enhanced divine theme colors
 				cyber: {
-					dark: '#1A1F2C',
+					dark: '#0F0C29',
 					purple: '#9b87f5',
 					'purple-dark': '#7E69AB',
 					'purple-vivid': '#8B5CF6',
@@ -95,29 +95,61 @@ export default {
 				},
 				'pulse-glow': {
 					'0%, 100%': { 
-						boxShadow: '0 0 10px 0 rgba(155, 135, 245, 0.7)',
+						boxShadow: '0 0 20px 0 rgba(155, 135, 245, 0.7), 0 0 40px 0 rgba(255, 119, 198, 0.5)',
 						transform: 'scale(1)'
 					},
 					'50%': { 
-						boxShadow: '0 0 20px 5px rgba(155, 135, 245, 0.9)',
-						transform: 'scale(1.02)' 
+						boxShadow: '0 0 40px 10px rgba(155, 135, 245, 0.9), 0 0 80px 20px rgba(255, 119, 198, 0.8)',
+						transform: 'scale(1.05)' 
 					}
 				},
 				'float': {
-					'0%, 100%': { transform: 'translateY(0)' },
-					'50%': { transform: 'translateY(-10px)' }
+					'0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+					'33%': { transform: 'translateY(-20px) rotate(120deg)' },
+					'66%': { transform: 'translateY(-10px) rotate(240deg)' }
 				},
 				'scan-line': {
-					'0%': { transform: 'translateY(0)' },
-					'100%': { transform: 'translateY(100%)' }
+					'0%': { transform: 'translateY(-100%) scaleY(1)' },
+					'50%': { transform: 'translateY(50%) scaleY(3)' },
+					'100%': { transform: 'translateY(200%) scaleY(1)' }
+				},
+				'divine-shimmer': {
+					'0%': { 
+						backgroundPosition: '-200% 0',
+						transform: 'skewX(-20deg)'
+					},
+					'100%': { 
+						backgroundPosition: '200% 0',
+						transform: 'skewX(-20deg)'
+					}
+				},
+				'ethereal-pulse': {
+					'0%, 100%': {
+						opacity: '0.5',
+						transform: 'scale(1) rotate(0deg)',
+						filter: 'hue-rotate(0deg)'
+					},
+					'50%': {
+						opacity: '0.8',
+						transform: 'scale(1.1) rotate(180deg)',
+						filter: 'hue-rotate(90deg)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
-				'float': 'float 6s ease-in-out infinite',
-				'scan-line': 'scan-line 2s linear infinite'
+				'float': 'float 8s ease-in-out infinite',
+				'scan-line': 'scan-line 3s linear infinite',
+				'divine-shimmer': 'divine-shimmer 3s ease-in-out infinite',
+				'ethereal-pulse': 'ethereal-pulse 4s ease-in-out infinite'
+			},
+			spacing: {
+				'18': '4.5rem',
+				'22': '5.5rem',
+				'26': '6.5rem',
+				'30': '7.5rem'
 			}
 		}
 	},
