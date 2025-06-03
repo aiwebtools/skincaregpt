@@ -32,8 +32,49 @@ const Index = () => {
     return () => document.removeEventListener('click', handleAnchorClick);
   }, []);
 
+  // SEO Schema markup injection
+  useEffect(() => {
+    // Add breadcrumb schema
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "AI Web Tools",
+          "item": "https://www.aiwebtools.ai"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "SKINCARE GPT",
+          "item": "https://aiwebtools.lovable.app/"
+        }
+      ]
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(breadcrumbSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-cyber-dark overflow-hidden relative">
+      {/* Hidden SEO Content for search engines */}
+      <div className="sr-only">
+        <h1>Free AI Skincare Analysis Tool - SKINCARE GPT by AI Web Tools</h1>
+        <p>Get professional skincare analysis using artificial intelligence. Free AI tool for personalized skincare routines, product recommendations, and skin health assessment.</p>
+        <span>Keywords: AI web tools, free AI tools, skincare AI, artificial intelligence beauty tools, skin analysis, dermatology AI, beauty assistant</span>
+      </div>
+
       {/* Divine background effects */}
       <div className="fixed inset-0 bg-gradient-to-br from-purple-900/30 via-black to-indigo-900/30 z-0"></div>
       
@@ -48,7 +89,7 @@ const Index = () => {
       
       <div className="relative z-10">
         <Navbar />
-        <main className="pt-16 relative">
+        <main className="pt-16 relative" role="main">
           <div className="ethereal-glow">
             <HeroSection />
           </div>

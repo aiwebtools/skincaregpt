@@ -1,0 +1,16 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://aiwebtools.lovable.app/</loc>
+    <lastmod>2025-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1570554612800-308f9c897f33?q=80&w=1200&auto=format&fit=crop</image:loc>
+      <image:title>SKINCARE GPT - AI Skincare Analysis Tool</image:title>
+      <image:caption>Free AI-powered skincare analysis and recommendations</image:caption>
+    </image:image>
+  </url>
+</urlset>
