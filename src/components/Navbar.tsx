@@ -12,50 +12,50 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-cyber-dark/80 backdrop-blur-lg border-b border-cyber-purple/20">
-      <div className="container mx-auto px-4 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-cyber-dark/90 backdrop-blur-lg border-b border-cyber-purple/20">
+      <div className="container mx-auto px-3 sm:px-4 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="relative h-10 w-10">
+          <div className="flex items-center min-w-0">
+            <Link to="/" className="flex items-center gap-2 min-w-0">
+              <div className="relative h-8 w-8 sm:h-10 sm:w-10 flex-shrink-0">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-teal-400 to-purple-400 opacity-70 blur-sm"></div>
                 <div className="relative h-full w-full rounded-full border border-teal-300/50 bg-black/30 flex items-center justify-center">
-                  <Bath size={18} className="text-white" />
+                  <Bath size={16} className="text-white sm:w-[18px] sm:h-[18px]" />
                 </div>
               </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-cyber font-bold text-white neon-text text-glow">SKINCARE GPT</span>
-                <span className="text-xs text-cyber-purple/90">Presented by <a href="https://www.aiwebtools.ai" className="hover:text-cyber-pink" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a></span>
+              <div className="flex flex-col min-w-0">
+                <span className="text-base sm:text-xl font-cyber font-bold text-white neon-text text-glow truncate">SKINCARE GPT</span>
+                <span className="text-[10px] sm:text-xs text-cyber-purple/90 truncate">Presented by <a href="https://aiwebtools.lovable.app/?via=aiwebtools" className="hover:text-cyber-pink" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a></span>
               </div>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-6">
             <a 
               href="https://chatgpt.com/g/g-KyRzUxJzX-skincare-gpt" 
-              className="text-white hover:text-cyber-purple transition-colors" 
+              className="text-white hover:text-cyber-purple transition-colors text-sm lg:text-base whitespace-nowrap" 
               target="_blank" 
               rel="noopener noreferrer"
             >
               SKINCARE GPT
             </a>
-            <a href="#faq" className="text-white hover:text-cyber-purple transition-colors">
+            <a href="#faq" className="text-white hover:text-cyber-purple transition-colors text-sm lg:text-base">
               FAQ
             </a>
-            <a href="#disclaimer" className="text-white hover:text-cyber-purple transition-colors">
+            <a href="#disclaimer" className="text-white hover:text-cyber-purple transition-colors text-sm lg:text-base">
               Disclaimer
             </a>
             <a 
-              href="https://www.aiwebtools.ai" 
-              className="text-white hover:text-cyber-purple transition-colors"
+              href="https://aiwebtools.lovable.app/?via=aiwebtools" 
+              className="text-white hover:text-cyber-purple transition-colors text-sm lg:text-base whitespace-nowrap"
               target="_blank" 
               rel="noopener noreferrer"
             >
               More AI Tools
             </a>
-            <CyberButton variant="default" className="ml-4">
+            <CyberButton variant="default" className="ml-2 lg:ml-4">
               <a href="https://chatgpt.com/g/g-KyRzUxJzX-skincare-gpt" target="_blank" rel="noopener noreferrer" className="flex items-center">
                 Try Now
               </a>
@@ -64,7 +64,7 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <button 
-            className="md:hidden text-white p-2" 
+            className="md:hidden text-white p-2 -mr-2 active:scale-95 transition-transform touch-manipulation" 
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
           >
@@ -77,11 +77,15 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <nav className="md:hidden py-4 flex flex-col gap-4 border-t border-cyber-purple/20 mt-4">
+        <div 
+          className={`md:hidden overflow-hidden transition-all duration-200 ease-out ${
+            isMobileMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <nav className="py-4 flex flex-col gap-3 border-t border-cyber-purple/20 mt-3">
             <a 
               href="https://chatgpt.com/g/g-KyRzUxJzX-skincare-gpt" 
-              className="text-white hover:text-cyber-purple py-2 transition-colors" 
+              className="text-white hover:text-cyber-purple py-2 px-1 transition-colors active:text-cyber-purple touch-manipulation text-base" 
               target="_blank" 
               rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
@@ -90,34 +94,34 @@ const Navbar = () => {
             </a>
             <a 
               href="#faq" 
-              className="text-white hover:text-cyber-purple py-2 transition-colors"
+              className="text-white hover:text-cyber-purple py-2 px-1 transition-colors active:text-cyber-purple touch-manipulation text-base"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               FAQ
             </a>
             <a 
               href="#disclaimer" 
-              className="text-white hover:text-cyber-purple py-2 transition-colors"
+              className="text-white hover:text-cyber-purple py-2 px-1 transition-colors active:text-cyber-purple touch-manipulation text-base"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Disclaimer
             </a>
             <a 
-              href="https://www.aiwebtools.ai" 
-              className="text-white hover:text-cyber-purple py-2 transition-colors"
+              href="https://aiwebtools.lovable.app/?via=aiwebtools" 
+              className="text-white hover:text-cyber-purple py-2 px-1 transition-colors active:text-cyber-purple touch-manipulation text-base"
               target="_blank" 
               rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               More AI Tools
             </a>
-            <CyberButton variant="default" className="mt-2">
-              <a href="https://chatgpt.com/g/g-KyRzUxJzX-skincare-gpt" target="_blank" rel="noopener noreferrer" className="flex items-center">
+            <CyberButton variant="default" className="mt-2 w-full">
+              <a href="https://chatgpt.com/g/g-KyRzUxJzX-skincare-gpt" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full">
                 Try Now
               </a>
             </CyberButton>
           </nav>
-        )}
+        </div>
       </div>
     </header>
   );

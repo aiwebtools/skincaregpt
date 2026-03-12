@@ -23,7 +23,7 @@ const Footer = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-cyber font-bold text-white neon-text text-glow drop-shadow-2xl">SKINCARE GPT</span>
-                <span className="text-xs text-cyber-purple/90">Presented by <a href="https://www.aiwebtools.ai" className="hover:text-cyber-pink" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a></span>
+                <span className="text-xs text-cyber-purple/90">Presented by <a href="https://aiwebtools.lovable.app/?via=aiwebtools" className="hover:text-cyber-pink" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a></span>
               </div>
             </Link>
             <p className="mt-4 text-gray-300 text-sm">
@@ -56,7 +56,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="https://www.aiwebtools.ai" className="text-gray-400 hover:text-cyber-purple transition-all duration-300 hover:drop-shadow-lg" target="_blank" rel="noopener noreferrer">
+                <a href="https://aiwebtools.lovable.app/?via=aiwebtools" className="text-gray-400 hover:text-cyber-purple transition-all duration-300 hover:drop-shadow-lg" target="_blank" rel="noopener noreferrer">
                   More AI Tools
                 </a>
               </li>
@@ -103,7 +103,7 @@ const Footer = () => {
         {/* Bottom section */}
         <div className="border-t border-cyber-purple/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="hover:text-cyber-purple transition-all duration-300 hover:drop-shadow-lg">
+            <a href="https://aiwebtools.lovable.app/?via=aiwebtools" target="_blank" rel="noopener noreferrer" className="hover:text-cyber-purple transition-all duration-300 hover:drop-shadow-lg">
               © 2025 AI WEB TOOLS LLC All rights reserved.
             </a>
           </div>
@@ -111,7 +111,7 @@ const Footer = () => {
             <span className="text-gray-400 text-sm hidden md:inline-block">Made with</span>
             <Heart size={16} className="text-cyber-pink animate-pulse drop-shadow-lg" />
             <CyberButton variant="outline" size="sm" className="rounded-full shadow-2xl shadow-purple-500/30 hover:shadow-purple-400/50 transition-all duration-300">
-              <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer">
+              <a href="https://aiwebtools.lovable.app/?via=aiwebtools" target="_blank" rel="noopener noreferrer">
                 More AI Tools
               </a>
             </CyberButton>
