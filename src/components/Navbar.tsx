@@ -26,7 +26,7 @@ const Navbar = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-cyber font-bold text-white neon-text text-glow">SKINCARE GPT</span>
-                <span className="text-xs text-cyber-purple/90">Presented by <a href="https://www.aiwebtools.ai" className="hover:text-cyber-pink" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a></span>
+                <span className="text-xs text-cyber-purple/90">Presented by <a href="https://aiwebtools.lovable.app/?via=aiwebtools" className="hover:text-cyber-pink" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a></span>
               </div>
             </Link>
           </div>
