@@ -103,7 +103,7 @@ const Footer = () => {
         {/* Bottom section */}
         <div className="border-t border-cyber-purple/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer" className="hover:text-cyber-purple transition-all duration-300 hover:drop-shadow-lg">
+            <a href="https://aiwebtools.lovable.app/?via=aiwebtools" target="_blank" rel="noopener noreferrer" className="hover:text-cyber-purple transition-all duration-300 hover:drop-shadow-lg">
               © 2025 AI WEB TOOLS LLC All rights reserved.
             </a>
           </div>
