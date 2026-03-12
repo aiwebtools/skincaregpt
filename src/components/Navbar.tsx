@@ -103,7 +103,7 @@ const Navbar = () => {
               Disclaimer
             </a>
             <a 
-              href="https://www.aiwebtools.ai" 
+              href="https://aiwebtools.lovable.app/?via=aiwebtools" 
               className="text-white hover:text-cyber-purple py-2 transition-colors"
               target="_blank" 
               rel="noopener noreferrer"

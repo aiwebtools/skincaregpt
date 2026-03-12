@@ -111,7 +111,7 @@ const Footer = () => {
             <span className="text-gray-400 text-sm hidden md:inline-block">Made with</span>
             <Heart size={16} className="text-cyber-pink animate-pulse drop-shadow-lg" />
             <CyberButton variant="outline" size="sm" className="rounded-full shadow-2xl shadow-purple-500/30 hover:shadow-purple-400/50 transition-all duration-300">
-              <a href="https://www.aiwebtools.ai" target="_blank" rel="noopener noreferrer">
+              <a href="https://aiwebtools.lovable.app/?via=aiwebtools" target="_blank" rel="noopener noreferrer">
                 More AI Tools
               </a>
             </CyberButton>
